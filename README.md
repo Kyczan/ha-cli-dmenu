@@ -1,12 +1,14 @@
-# ha-cli
+# ha-cli-dmenu
 
 home automation CLI
 
-![App](./scroots/app.png)
+![Notification](./scroots/dunst.png)
 
 ## what
 
 This project is a simple wrapper for IFTTT which connects to SONOFF devices and allows to control them via CLI.
+
+Also this is [dmenu](https://wiki.archlinux.org/index.php/dmenu) (more precisely: [rofi](https://wiki.archlinux.org/index.php/Rofi)) version of [ha-cli](https://github.com/Kyczan/ha-cli)
 
 ## why
 
@@ -26,12 +28,20 @@ To control SONOFF devices there is only app for phone ([eWeLink](http://www.ewel
 
 5. Test connection with presented url and as `{event}` use event name created in step 4. You should be able to switch on/off the light when executing this url.
 
+### dependencies
+
+- nodejs
+- rofi
+- dmenu
+- dunst
+- xclip
+
 ### installation
 
 Clone repository and cd into:
 
 ```sh
-git clone https://github.com/Kyczan/ha-cli.git
+git clone https://github.com/Kyczan/ha-cli-dmenu.git
 cd ha-cli
 ```
 
@@ -41,7 +51,7 @@ Next grab your API key [here](https://ifttt.com/services/maker_webhooks/settings
 API_KEY="your_api_key"
 ```
 
-Then adjust `config.json` file accordingly to your `{events}` values.
+Then adjust `config.json` file in `src/config` dir accordingly to your `{events}` values.
 
 And finally install this package globally by typing in terminal:
 
@@ -49,8 +59,10 @@ And finally install this package globally by typing in terminal:
 sudo npm install -g
 ```
 
-Now you have command `ha-cli` available across all terminals.
+Now you have command `ha-cli-dmenu` available across all terminals.
 
 ### usage
 
-Open terminal, type `ha-cli`, and follow instructions.
+Open terminal, type `ha-cli-dmenu`, and pick option to switch.
+
+Also, as a good practice, it is worth to create keybinding to run `ha-cli-dmenu`, so you can run this from anywhere in your system. Example keybinding is created in my fork of [dwm](https://github.com/Kyczan/dwm) (search `config.h` file for `ha-cli-dmenu`).
