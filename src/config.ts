@@ -1,15 +1,20 @@
 import dotenv from 'dotenv';
-dotenv.config({ path: __dirname + '/../../.env' });
+dotenv.config({ path: __dirname + '/../.env' });
+
+import path from 'path';
 
 interface IConfig {
   apiKey: string;
+  dunstIconPath: string;
   webhooks: string[];
 }
 
 const apiKey: string = process.env.API_KEY || '';
+const dunstIconPath: string = path.join(__dirname, './assets/switch.png');
 
 const config: IConfig = {
   apiKey,
+  dunstIconPath,
   webhooks: [
     'bedroom_on',
     'bedroom_off',
@@ -26,4 +31,4 @@ const config: IConfig = {
   ],
 };
 
-export { config };
+export default config;
