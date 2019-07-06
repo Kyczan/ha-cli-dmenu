@@ -1,6 +1,6 @@
 {
   "name": "ha-cli-dmenu",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Wrapper for IFTTT to control SONOFF devices via cli using dmenu",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
