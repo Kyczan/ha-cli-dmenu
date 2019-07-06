@@ -3,19 +3,14 @@ dotenv.config({ path: __dirname + '/../.env' });
 
 import path from 'path';
 
-interface IConfig {
-  apiKey: string;
-  dunstIconPath: string;
-  webhooks: string[];
-}
+class Config {
+  public static apiKey: string = process.env.API_KEY || '';
+  public static dunstIconPath: string = path.join(
+    __dirname,
+    './assets/switch.png',
+  );
 
-const apiKey: string = process.env.API_KEY || '';
-const dunstIconPath: string = path.join(__dirname, './assets/switch.png');
-
-const config: IConfig = {
-  apiKey,
-  dunstIconPath,
-  webhooks: [
+  public static webhooks: string[] = [
     'bedroom_on',
     'bedroom_off',
     'bedroom_lamp_on',
@@ -28,7 +23,7 @@ const config: IConfig = {
     'wc_off',
     'living_on',
     'living_off',
-  ],
-};
+  ];
+}
 
-export default config;
+export default Config;

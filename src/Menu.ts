@@ -2,7 +2,7 @@ import to from 'await-to-js';
 import capitalize from 'capitalize';
 import { Menu } from 'rofix';
 
-import config from './config';
+import Config from './Config';
 
 class AppMenu {
   public getOption = async (): Promise<any[]> => {
@@ -20,7 +20,7 @@ class AppMenu {
   };
 
   private prepareOptions = (): string[] => {
-    const { webhooks } = config;
+    const { webhooks } = Config;
     return webhooks.map(str => capitalize.words(str.split('_').join(' ')));
   };
 

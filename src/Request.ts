@@ -1,7 +1,7 @@
 import to from 'await-to-js';
 import axios, { AxiosResponse } from 'axios';
 
-import config from './config';
+import Config from './Config';
 
 type sendRequestType = (
   webhook: string,
@@ -13,7 +13,7 @@ class AppRequest {
   };
 
   private getUrl = (value: string): string =>
-    `https://maker.ifttt.com/trigger/${value}/with/key/${config.apiKey}`;
+    `https://maker.ifttt.com/trigger/${value}/with/key/${Config.apiKey}`;
 }
 
 export default AppRequest;

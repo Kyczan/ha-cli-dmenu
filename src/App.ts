@@ -1,6 +1,6 @@
 import dunst from 'notify-send';
 
-import config from './config';
+import Config from './Config';
 import AppMenu from './Menu';
 import AppRequest from './Request';
 
@@ -24,7 +24,7 @@ class App {
     const dunstUrgency = (respErr && dunst.critical) || dunst;
     const message = (respErr && respErr.message) || (payload && payload.data);
     dunstUrgency
-      .icon(config.dunstIconPath)
+      .icon(Config.dunstIconPath)
       .notify('Home Automation CLI', message);
 
     process.exit();
