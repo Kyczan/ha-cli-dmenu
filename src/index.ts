@@ -1,15 +1,12 @@
 #!/usr/bin/env node
 
-import dotenv from 'dotenv';
-dotenv.config({ path: __dirname + '/../.env' });
-
 import axios from 'axios';
 import capitalize from 'capitalize';
 import dunst from 'notify-send';
 import path from 'path';
 import { Menu } from 'rofix';
 
-import config from './config/config.json';
+import { config } from './config/config';
 
 const prepareOptions = () => {
   const { webhooks } = config;
@@ -24,7 +21,7 @@ const convertToWebhook = (selectedOption: any) => {
 };
 
 const getUrl = (value: string) =>
-  `https://maker.ifttt.com/trigger/${value}/with/key/${process.env.API_KEY}`;
+  `https://maker.ifttt.com/trigger/${value}/with/key/${config.apiKey}`;
 
 const sendRequest = async (webhook: string) => {
   try {
@@ -39,7 +36,7 @@ const sendRequest = async (webhook: string) => {
 };
 
 const dmenuRun = async () => {
-  const iconPath = path.join(__dirname, './assets/switch.png');
+  const iconPath: string = path.join(__dirname, './assets/switch.png');
   const menuArgs = { p: 'Select what to toggle' };
   const menu = new Menu(prepareOptions(), menuArgs);
 
