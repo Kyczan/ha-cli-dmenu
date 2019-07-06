@@ -8,22 +8,29 @@ import { Menu } from 'rofix';
 
 import { config } from './config/config';
 
-const prepareOptions = () => {
+const prepareOptions = (): string[] => {
   const { webhooks } = config;
   return webhooks.map(str => capitalize.words(str.split('_').join(' ')));
 };
 
-const convertToWebhook = (selectedOption: any) => {
+const convertToWebhook = (selectedOption: string): string => {
   return selectedOption
     .toLowerCase()
     .split(' ')
     .join('_');
 };
 
-const getUrl = (value: string) =>
+const getUrl = (value: string): string =>
   `https://maker.ifttt.com/trigger/${value}/with/key/${config.apiKey}`;
 
-const sendRequest = async (webhook: string) => {
+type sendRequestType = (
+  webhook: string,
+) => Promise<{
+  status: string;
+  payload: any;
+}>;
+
+const sendRequest: sendRequestType = async (webhook: string) => {
   try {
     await axios.get(getUrl(webhook));
     return {
@@ -35,7 +42,9 @@ const sendRequest = async (webhook: string) => {
   }
 };
 
-const dmenuRun = async () => {
+type dmenuRunType = () => Promise<void>;
+
+const dmenuRun: dmenuRunType = async () => {
   const iconPath: string = path.join(__dirname, './assets/switch.png');
   const menuArgs = { p: 'Select what to toggle' };
   const menu = new Menu(prepareOptions(), menuArgs);
