@@ -4,13 +4,13 @@ import Config from './Config';
 import AppMenu from './Menu';
 import AppRequest from './Request';
 
-const appMenu = new AppMenu();
-const appRequest = new AppRequest();
-
 class App {
+  private appMenu = new AppMenu();
+  private appRequest = new AppRequest();
+
   public run = async (): Promise<void> => {
     // show rofi dmenu to choose webhook
-    const [menuErr, selectedWebhook] = await appMenu.getOption();
+    const [menuErr, selectedWebhook] = await this.appMenu.getOption();
 
     if (menuErr) {
       // nothing was selected
@@ -18,7 +18,9 @@ class App {
     }
 
     // send request to IFTTT server
-    const [respErr, payload] = await appRequest.sendRequest(selectedWebhook);
+    const [respErr, payload] = await this.appRequest.sendRequest(
+      selectedWebhook,
+    );
 
     // show dunst notification
     const dunstUrgency = (respErr && dunst.critical) || dunst;
