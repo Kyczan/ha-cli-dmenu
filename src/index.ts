@@ -2,5 +2,5 @@
 
 import App from './App';
 
-const app = new App();
+const app: App = new App();
 app.run();
