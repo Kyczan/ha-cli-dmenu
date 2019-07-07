@@ -15,6 +15,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "test": "jest --config jest.config.json",
+    "codecov": "codecov",
     "prepare": "npm run build"
   },
   "bin": {
@@ -42,6 +43,7 @@
     "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.15",
     "@types/node": "^12.0.10",
+    "codecov": "^3.5.0",
     "jest": "^24.8.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
