@@ -1,6 +1,7 @@
 # ha-cli-dmenu
 
 [![Build Status](https://travis-ci.com/Kyczan/ha-cli-dmenu.svg?branch=master)](https://travis-ci.com/Kyczan/ha-cli-dmenu)
+[![codecov](https://codecov.io/gh/Kyczan/ha-cli-dmenu/branch/master/graph/badge.svg)](https://codecov.io/gh/Kyczan/ha-cli-dmenu)
 
 home automation CLI
 
