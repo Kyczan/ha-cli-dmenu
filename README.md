@@ -1,5 +1,7 @@
 # ha-cli-dmenu
 
+[![Build Status](https://travis-ci.com/Kyczan/ha-cli-dmenu.svg?branch=master)](https://travis-ci.com/Kyczan/ha-cli-dmenu)
+
 home automation CLI
 
 ![Notification](./scroots/dunst.png)
