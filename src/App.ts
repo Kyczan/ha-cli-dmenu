@@ -14,7 +14,7 @@ class App {
 
     if (menuErr) {
       // nothing was selected
-      process.exit();
+      return;
     }
 
     // send request to IFTTT server
@@ -29,7 +29,8 @@ class App {
       .icon(Config.dunstIconPath)
       .notify('Home Automation CLI', message);
 
-    process.exit();
+    // process.exit();
+    return;
   };
 }
 

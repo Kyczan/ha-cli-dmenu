@@ -14,7 +14,7 @@ describe('AppMenu', () => {
     expect(appMenu).toBeInstanceOf(AppMenu);
   });
 
-  it('should handle `getOption` WITHOUT error', async () => {
+  it('should handle `getOption()` WITHOUT error', async () => {
     const expectedResponse = 'test_webhook';
     const payload = { stdout: expectedResponse };
     Menu.mockImplementation(() => {
@@ -29,7 +29,7 @@ describe('AppMenu', () => {
     expect(res).toEqual(expectedResponse);
   });
 
-  it('should handle `getOption` WITH error', async () => {
+  it('should handle `getOption()` WITH error', async () => {
     const expectedError = 'Error';
     Menu.mockImplementation(() => {
       return {
