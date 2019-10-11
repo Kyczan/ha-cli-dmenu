@@ -57,9 +57,11 @@ API_KEY="your_api_key"
 
 Then adjust config object named `webhooks` in file `src/Config.ts` accordingly to your `{events}` values.
 
-And finally install this package globally by typing in terminal:
+And finally build locally and install this package globally by typing in terminal:
 
 ```sh
+npm i
+npm run build
 sudo npm install -g
 ```
 
