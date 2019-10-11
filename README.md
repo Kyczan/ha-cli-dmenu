@@ -55,7 +55,7 @@ Next grab your API key [here](https://ifttt.com/services/maker_webhooks/settings
 API_KEY="your_api_key"
 ```
 
-Then adjust `config.json` file in `src/config` dir accordingly to your `{events}` values.
+Then adjust config object named `webhooks` in file `src/Config.ts` accordingly to your `{events}` values.
 
 And finally install this package globally by typing in terminal:
 

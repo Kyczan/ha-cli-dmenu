@@ -23,6 +23,8 @@ class Config {
     'wc_off',
     'living_on',
     'living_off',
+    'living_lamp_on',
+    'living_lamp_off',
   ];
 }
 
